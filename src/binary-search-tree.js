@@ -1,18 +1,18 @@
 const { NotImplementedError } = require('../extensions/index.js');
 
-// const { Node } = require('../extensions/list-tree.js');
+const { Node } = require('../extensions/list-tree.js');
 
 /**
 * Implement simple binary search tree according to task description
 * using Node from extensions
 */
-class Node {
-  constructor(data) {
-    this.data = data;
-    this.left = null;
-    this.right = null;
-  }
-}  //Создаем класс 
+// class Node {
+//   constructor(data) {
+//     this.data = data;
+//     this.left = null;
+//     this.right = null;
+//   }
+// }  //Создаем класс 
 
 class BinarySearchTree {
 
@@ -108,7 +108,7 @@ constructor() {
       if (data < node.data) {
         node.left = removeNode(node.left , data);
         return node;
-      } else if (node.data < data) {
+      } else if (data > node.data) {
         node.right = removeNode(node.right, data);
         return node;
       } else {
